@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title>D-BS web User Interface</title>
+<style>
+  body {
+      position: relative;
+  }
+  #section1 {padding-top:50px;}
+  #section2 {padding-top:50px;}
+  #section3 {padding-top:50px;}
+</style>
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+ 
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                       
+      </button>
+      <a class="navbar-brand" href="#">D-BS web User Interface</a>
+    </div>
+    <div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="#section1">General</a></li>
+          <li><a href="#section2">Material</a></li>
+          <li><a href="#section3">Displacement & Force</a></li>
+        </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+
+      </div>
+    </div>
+  </div>
+</nav>   
+ 
+<div id="section1" class="container-fluid">
+
+  <h1>General</h1>
+
+<form>
+  <div class="form-group">
+    <label for="inputdefault">Number of Nut</label>
+    <input class="form-control" id="inputdefault" type="text" placeholder="1, 2, or 3">
+  <span class="help-block">これはヘルプテキストです。</span>
+  </div>
+</form>
+
+<label class="radio-inline"><input type="radio" name="optradio">オプション 1</label>
+<label class="radio-inline"><input type="radio" name="optradio">オプション 2</label>
+<label class="radio-inline"><input type="radio" name="optradio">オプション 3</label>
+
+
+<div class="form-group">
+  <label for="sel1">選択リスト:</label>
+  <select class="form-control" id="sel1">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+  </select>
+</div>
+
+
+</div>
+
+
+<div id="section2" class="container-fluid">
+
+  <h1>Material</h1>
+<label class="checkbox-inline"><input type="checkbox" value="">オプション 1</label>
+<label class="checkbox-inline"><input type="checkbox" value="">オプション 2</label>
+<label class="checkbox-inline"><input type="checkbox" value="">オプション 3</label>
+</div>
+
+
+
+<div id="section3" class="container-fluid">
+
+  <h1>Displacement & Force</h1>
+
+<table class="table" id="tblForm2">
+<thead>
+<tr>
+<th>Displacement [mm]</th>
+<th>Force [N]</th>
+<th>Torque [Nm]</th>
+</tr>
+</thead>
+<tbody>
+<tr style="display: none;">
+<td><input name="Displacement[]" type=number /></td>
+<td><input name="Force[]"        type=number /></td>
+<td><input name="Torque[]"       type=number /></td>
+</tr>
+</tbody>
+</table>
+
+<input id="btnAdd2" type="button" value="Add" />
+
+</div>
+
+<p class="text-right">Mail: <span class="glyphicon glyphicon-envelope"></span></p>
+<p class="text-right">Print: <span class="glyphicon glyphicon-print"></span></p>
+
+<ul class="pager">
+  <li class="next"><a href="#">Calculate</a></li>
+</ul>
+
+</body>
+
+<script>
+jQuery(function($) {
+ $("#btnAdd2").on("click", function() {
+  $("#tblForm2 tbody tr:first-child").clone(true).appendTo("#tblForm2 tbody");
+  $("#tblForm2 tbody tr:last-child").css("display", "table-row");
+ });
+});
+</script>
+
+</html>
